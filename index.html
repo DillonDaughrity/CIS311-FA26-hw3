@@ -8,45 +8,93 @@
   
   <title>Frontend Mentor | Contact form</title>
 
+  <link rel="stylesheet" href="styles.css">
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 0.6875rem; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
+  <!-- Font Stuff -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <main>
+    <h1>Contact Us</h1>
 
-  Contact Us
+    <form id="form">
+      <div class="name-div">
+        <fieldset class="name-fieldset">
+          <label for="first-name" class="input-heading">First Name *</label>
+          <input type="text" id="first-name" class="text-input" required>
+          <!-- This field is required -->
+        </fieldset>
 
-  First Name
-  This field is required
+        <fieldset class="name-fieldset">
+          <label for="last-name" class="input-heading">Last Name *</label>
+          <input type="text" id="last-name" class="text-input" required>
+          <!-- This field is required -->
+        </fieldset>
+      </div>
 
-  Last Name
-  This field is required
+      <fieldset>
+        <label for="email" class="input-heading">Email Address *</label>
+        <input type="email" id="email" class="text-input" required>
+        <!-- Please enter a valid email address
+        This field is required -->
+      </fieldset>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      <fieldset>
+        <legend class="input-heading">Query Type *</legend>
+        
+        <div class="radio-div">
+          <label class="radio-option">
+            <input type="radio" name="query" id="enquiry" required>
+            <label for="enquiry" class="input-heading">General Enquiry</label>
+          </label>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+          <label class="radio-option">
+            <input type="radio" name="query" id="support" required>
+            <label for="support" class="input-heading">Support Request</label>
+          </label>
+        </div>
+        <!-- Please select a query type -->
+      </fieldset>
 
-  Message
-  This field is required
+      <fieldset>
+        <label for="message" class="input-heading">Message *</label>
+        <textarea id="message" class="text-input" required></textarea>
+        <!-- This field is required -->
+      </fieldset>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+      <fieldset>
+        <div class="input-div">
+          <input type="checkbox" id="consent" required>
+          <label for="consent" class="input-heading">I consent to being contacted by the team</label>
+        </div>
+        <!-- To submit this form, please consent to being contacted -->
+      </fieldset>
 
-  Submit
+      <button type="submit" id="submitButton">Submit</button>
+    </form>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
+    <div id="toast" popover="manual" role="status">
+      <div class="toast-top">
+        <img src="assets/images/icon-success-check.svg" alt=""> 
+        <p class="toast-title">Message Sent!</p>
+      </div>
+      <p class="toast-text">Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+  </main>
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Dillon Daughrity</a>.
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
